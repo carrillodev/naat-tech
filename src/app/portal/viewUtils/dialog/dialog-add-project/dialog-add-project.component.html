@@ -1,0 +1,67 @@
+<div>
+  <span class="close-modal-button">
+    <mat-icon mat-dialog-close class="text-accent">close</mat-icon>
+  </span>
+  <p class="text-title-dialog">
+    {{ textES.TITLE }}
+  </p>
+
+  <!-- Inputs -->
+  <div class="general-input-container">
+    <form [formGroup]="addProjectForm">
+      <div class="inputs-container">
+        <div>
+          <p class="text-description text-description-color">
+            {{ textES.CLIENT }}
+          </p>
+          <mat-form-field class="input-search">
+            <mat-select [formControl]="selectedClient" name="client">
+              <mat-option *ngFor="let client of clientsList" [value]="client">{{
+                client.name
+                }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <p class="text-description text-description-color">
+            {{ textES.PROJECT_NAME }}
+          </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="projectName" type="text" />
+            <mat-error *ngIf="!projectName.valid && projectName.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Add more projects button -->
+  <div>
+    <button [disabled]="!addProjectForm.valid || flagLengthList" mat-button class="text-accent text-description"
+      (click)="addNewProject()">
+      {{ textAddButton }}
+    </button>
+  </div>
+
+  <div class="inputs-container" *ngIf="addProjectList.length">
+    <p class="text-description text-title-color">{{ textES.CLIENT }}</p>
+    <p class="text-description text-title-color">{{ textES.PROJECT_NAME }}</p>
+  </div>
+
+  <!-- Projects List -->
+  <div class="inputs-container" *ngFor="let item of addProjectList">
+    <div>
+      <p class="text-description text-description-color">{{ item.clientName }}</p>
+    </div>
+    <div>
+      <p class="text-description text-description-color">{{ item.newProject.name }}</p>
+    </div>
+  </div>
+
+  <!-- Add new projects button -->
+  <div class="add-dialog-button-container">
+    <button (click)="createNewProjects()" [disabled]="flagActiveSendProjects" mat-raised-button>{{ textButtons.ADD
+      }}</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+@import "../../../../../theme.scss";
+
+.header-proyectos-container {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  margin-bottom: 30px;
+}
+
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.mat-button {
+  font-family: "SFUIDisplayRegular", sans-serif;
+  font-weight: bold;
+}
+
+.mat-icon {
+  color: $color-accent;
+  margin: 9px 10px;
+}

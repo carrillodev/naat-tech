@@ -1,0 +1,41 @@
+<div class="second-header-container">
+  <div class="title-control-container">
+    <span matPrefix>
+      <a [routerLink]="dataHeaderInput.PREVIOUS_PAGE">
+        <mat-icon class="icon-back">chevron_left</mat-icon>
+      </a>
+    </span>
+    <h1>{{ dataHeaderInput.TITLE }}</h1>
+  </div>
+
+  <div *ngIf="dataHeaderInput.ACTIVE_ALL_COLUMNS"
+    class="header-columns-detail-container text-description text-title-color">
+    <div>
+      <p>{{ dataHeaderInput.COLUMN_ONE.TITLE }}</p>
+      <p class="text-bold">{{ dataHeaderInput.COLUMN_ONE.DESCRIPTION }}</p>
+    </div>
+    <div>
+      <p>{{ dataHeaderInput.COLUMN_TWO.TITLE }}</p>
+      <p class="text-bold">{{ dataHeaderInput.COLUMN_TWO.DESCRIPTION }}</p>
+    </div>
+    <div>
+      <p>{{ dataHeaderInput.COLUMN_THREE.TITLE }}</p>
+      <p class="text-bold">{{ dataHeaderInput.COLUMN_THREE.DESCRIPTION }}</p>
+    </div>
+    <div>
+      <form *ngIf="dataHeaderInput.ACTIVE_COLUMN_FOUR" class="input-search" [formGroup]="searchGroupForm">
+        <span matPrefix class="text-description-color">
+          <mat-icon>search</mat-icon>
+        </span>
+        <input (blur)="searchValue()" placeholder="{{ dataHeaderInput.COLUMN_FOUR.TITLE }}" [formControl]="searchInput">
+      </form>
+      <div *ngIf="!dataHeaderInput.ACTIVE_COLUMN_FOUR">
+        <p>{{ dataHeaderInput.COLUMN_FOUR.TITLE }}</p>
+        <p class="text-bold">{{ dataHeaderInput.COLUMN_FOUR.DESCRIPTION }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!dataHeaderInput.ACTIVE_ALL_COLUMNS"></div>
+
+</div>

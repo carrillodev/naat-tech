@@ -1,0 +1,25 @@
+<div class="general-container">
+  <img src="{{ logoNaatTech }}" alt="NA-AT Technologies">
+
+  <div class="secondary-background card-container">
+    <h2>{{ texts.TITLE }}</h2>
+    <p class="text-description center-text text-description-color">{{ texts.DESCRIPTION }}</p>
+
+    <div class="grid-container">
+      <form class="grid-container" [formGroup]="loginForm">
+        <mat-form-field>
+          <label>{{ inputText.USER_EMAIL }}</label>
+          <input matInput [formControl]="email" (blur)="validateEmailFormat()" (keyUp.enter)="validateEmailFormat()">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label>{{ inputText.USER_PASSWORD }}</label>
+          <input matInput [formControl]="password" type="password">
+        </mat-form-field>
+      </form>
+
+      <button mat-raised-button [disabled]="!loginForm.valid">{{ buttonText.LOGIN_ACTION }}</button>
+      <button mat-stroked-button (click)="doLogin()">Sign in with Google</button>
+    </div>
+  </div>
+</div>

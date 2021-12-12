@@ -1,0 +1,43 @@
+@import "../../../../../theme.scss";
+
+.second-header-container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  margin-bottom: 30px;
+}
+
+.header-columns-detail-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.title-control-container {
+  display: flex;
+  align-items: center;
+}
+
+// Buttons & Icons
+.icon-back {
+  color: $color-accent;
+}
+
+// Input
+.input-search {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: $color-background-secondary;
+  font-family: "SFUIDisplayRegular", sans-serif;
+  box-sizing: border-box;
+  height: 40px;
+  width: 215px;
+  border: 1px solid $color-radius;
+  border-radius: 4px;
+}
+
+input::placeholder,
+input {
+  border: none;
+  outline: none;
+  color: $color-inactive;
+}

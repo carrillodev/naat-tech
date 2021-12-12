@@ -1,0 +1,81 @@
+@import "../../../../../theme.scss";
+
+// Containers
+.mat-drawer {
+  background-color: $color-background-secondary;
+  width: 184px;
+}
+
+.mat-drawer-content {
+  background-color: $color-background-principal;
+}
+
+.mat-drawer-container {
+  height: 100%;
+}
+
+.text-container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.router-container {
+  padding: 30px 17px 26px 16px;
+}
+
+.profile-mt50 {
+  margin-top: 50px;
+}
+
+// Images
+.img-small-logo {
+  width: 150px;
+  margin: 40px 16px 0px;
+}
+
+// Menu flotante
+.mat-button {
+  padding-left: 0;
+  padding-right: 14px;
+  min-width: 16px;
+}
+
+// Colors
+.icon-accent-color {
+  color: $color-accent;
+}
+
+// Menu
+ul {
+  padding-left: 0px;
+}
+
+li {
+  margin: 10px 16px 10px 14px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+a {
+  color: $color-inactive;
+  display: flex;
+  align-items: center;
+}
+
+li.active > a {
+  color: $color-accent;
+}
+
+// texts
+.p18-left {
+  padding-left: 18px;
+}

@@ -1,0 +1,45 @@
+<div>
+  <span class="close-modal-button">
+    <mat-icon [mat-dialog-close]="true" mat-dialog-close class="text-accent">close</mat-icon>
+  </span>
+  <p class="text-title-dialog">
+    {{ textES.TITLE }}
+  </p>
+
+  <!-- Add Client -->
+  <div class="general-input-container">
+    <form [formGroup]="addForm">
+      <div class="inputs-container">
+        <div>
+          <p class="text-description text-description-color">
+            {{ textES.CLIENT_NAME }}
+          </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="clientName" type="text" />
+            <mat-error *ngIf="!clientName.valid && clientName.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Add more clients button -->
+  <div>
+    <button [disabled]="!addForm.valid || addList.length >= 4" mat-button class="text-accent text-description"
+      (click)="addNew()">
+      {{ textAddButton }}
+    </button>
+  </div>
+
+  <!-- Added List -->
+  <div *ngIf="addList.length > 0">
+    <p class="text-description text-title-color" *ngFor="let item of addList">{{ item.name }}</p>
+  </div>
+
+  <!-- Add new clients button -->
+  <div class="add-dialog-button-container">
+    <button (click)="createNewItem()" [disabled]="addList.length === 0" mat-raised-button>{{ textButtons.ADD
+      }}</button>
+  </div>
+</div>

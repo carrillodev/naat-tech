@@ -1,0 +1,9 @@
+@import "../../../../../theme.scss";
+
+.img-news {
+  height: 106px;
+  width: 106px;
+  border: 1px solid $color-inactive;
+  border-radius: 4px;
+  background-color: $color-background-secondary;
+}

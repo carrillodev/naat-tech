@@ -1,0 +1,43 @@
+@import "../../../../../theme.scss";
+
+// Containers
+.general-container {
+  display: grid;
+  justify-items: center;
+}
+
+.card-container {
+  padding: 25px 30px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+// Texts
+h2 {
+  margin: 20px 16px 10px;
+  color: $color-text-title;
+  text-align: center;
+}
+
+.text-description {
+  margin: 0px 16px;
+}
+
+// Images
+img {
+  margin: 247px 0px 40px 0px;
+}
+
+// Buttons
+button {
+  width: 227px;
+  margin: 33px 105px 0px;
+}
+
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}

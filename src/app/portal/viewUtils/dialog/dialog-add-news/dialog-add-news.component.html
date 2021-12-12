@@ -1,0 +1,76 @@
+<div>
+  <span class="close-modal-button">
+    <mat-icon [mat-dialog-close]="true" mat-dialog-close class="text-accent">close</mat-icon>
+  </span>
+  <p class="text-title-dialog">
+    {{ textES.TITLE }}
+  </p>
+
+  <!-- 1st section -->
+  <div class="principal-background-general two-columns-news-title">
+    <div class="dropzone-container img-sm-container">
+      <h3>{{ textES.IMG_THUMB_TITLE }}</h3>
+      <p class="upload-text">
+        <strong class="text-accent">{{ textES.IMG_DESCRIPTION_UPLOAD }}</strong>
+        {{ textES.IMG_DESCRIPTION }}
+        <br>
+        {{ textES.IMG_SIZE_SM }}
+      </p>
+      <input type="file" class="input-draganddrop-zone">
+    </div>
+
+    <div>
+      <form [formGroup]="addForm">
+        <p class="text-description text-description-color">
+          {{ textES.TITLE_NEWS }}
+        </p>
+        <mat-form-field class="input-search">
+          <input matInput [formControl]="title" type="text" />
+          <mat-error *ngIf="!title.valid && title.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2nd section -->
+  <div class="principal-background-general m-t-20">
+    <div class="dropzone-container img-l-container" appDragAndDropZone (dragover)="dragOverHandler($event)"
+      (drop)="dropHandler($event)">
+      <div class="input-draganddrop-zone">
+        <h3 *ngIf="!imageURL">{{ textES.IMG_PRINCIPAL_TITLE }}</h3>
+        <label for="imgUpload" class="upload-text">
+          <div *ngIf="!imageURL">
+            <strong class="text-accent">{{ textES.IMG_DESCRIPTION_UPLOAD }}</strong>
+            {{ textES.IMG_DESCRIPTION }}
+            <br>
+            {{ textES.IMG_SIZE_L }}
+          </div>
+          <img *ngIf="imageURL" [src]="imageURL" alt="banner" class="img-l-container">
+        </label>
+        <input id="imgUpload" (change)="uploadByInput($event)" type="file">
+      </div>
+    </div>
+
+    <form class="m-t-20" [formGroup]="addForm">
+      <p class="text-description text-description-color">
+        {{ textES.DESCRIPTION }}
+      </p>
+      <mat-form-field class="input-search input-textarea">
+        <textarea matInput [formControl]="description" type="text"></textarea>
+        <mat-error *ngIf="!description.valid && description.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+        </mat-error>
+      </mat-form-field>
+    </form>
+
+    <!-- Buttons -->
+    <div class="m-t-20 buttons-container">
+      <button (click)="saveItem()" mat-stroked-button>
+        {{ textButtons.SAVE_DRAFT }}
+      </button>
+      <button (click)="publishNews()" [disabled]="!addForm.valid" mat-raised-button>
+        {{ textButtons.PUBLISH }}
+      </button>
+    </div>
+  </div>
+</div>

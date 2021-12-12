@@ -1,0 +1,53 @@
+<mat-drawer-container class="example-container">
+  <!-- Menu -->
+  <mat-drawer mode="side" opened>
+    <img class="img-small-logo" src="{{ logoNaatTech }}" alt="NA-AT Technologies">
+
+    <!-- Imagen de perfil y nombre de usuario -->
+    <mat-grid-list cols="3" class="profile-mt50">
+      <mat-grid-tile>
+        <img class="img-circle" src="{{ userImage }}" alt="profileImage">
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2">
+        <div>
+          <p class="text-title-color text-description">{{ menuTexts.WELCOME_TITLE }}</p>
+          <p class="text-title-color text-description text-container">
+            {{ userName }}
+            <button mat-button [matMenuTriggerFor]="menu">
+              <span>
+                <mat-icon class="icon-accent-color">expand_more</mat-icon>
+              </span>
+            </button>
+
+            <mat-menu #menu="matMenu">
+              <button (click)="logoutSession()" class="text-title-color" mat-menu-item>
+                <mat-icon class="icon-accent-color">logout</mat-icon>
+                {{ buttonsTexts.LOGOUT }}
+              </button>
+            </mat-menu>
+          </p>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <!-- Menu -->
+    <ul>
+      <li routerLinkActive='active' *ngFor="let item of menuTexts.ITEMS">
+        <a [routerLink]='item.PATH_PAGE'>
+          <span>
+            <mat-icon>{{ item.ICON }}</mat-icon>
+          </span>
+          <p class="p18-left"> {{ item.TITLE }} </p>
+        </a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <!-- Menu content -->
+  <mat-drawer-content>
+    <div class="router-container">
+      <h1 *ngIf="!verifyScreen()">{{ errorMessages.INVALID_SCREEN }}</h1>
+      <router-outlet *ngIf="verifyScreen()"></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

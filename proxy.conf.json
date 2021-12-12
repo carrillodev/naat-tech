@@ -1,0 +1,32 @@
+{
+  "/clients/*": {
+    "target": "http://3.238.21.227:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/news/*": {
+    "target": "http://3.238.21.227:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/activities/*": {
+    "target": "http://3.238.21.227:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/users/*": {
+    "target": "http://3.238.21.227:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/auth/*": {
+    "target": "http://3.238.21.227:8080",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -1,0 +1,16 @@
+<div>
+  <div class="header-proyectos-container">
+    <h1>{{ textTitle }}</h1>
+    <div>
+      <form class="input-search" [formGroup]="searchGroupForm" *ngIf="flagSearch">
+        <span matPrefix>
+          <mat-icon>search</mat-icon>
+        </span>
+        <input placeholder="{{ searchLabel }}" (keydown.enter)="searchValueEnter()" [formControl]="searchInput">
+      </form>
+    </div>
+    <div>
+      <button *ngIf="flagButton" (click)="openDialog()" mat-raised-button>{{ addButtonLabel }}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div>
+  <span class="close-modal-button">
+    <mat-icon [mat-dialog-close]="true" mat-dialog-close class="text-accent">close</mat-icon>
+  </span>
+  <p class="text-title-dialog">
+    {{ textES.TITLE }}
+  </p>
+
+  <!-- Add Notification -->
+  <div>
+    <form [formGroup]="addForm">
+      <p class="text-description text-description-color">
+        {{ textES.TITLE_NOT }}
+      </p>
+      <mat-form-field class="input-search">
+        <input matInput [formControl]="title" type="text" />
+        <mat-error *ngIf="!title.valid && title.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+        </mat-error>
+      </mat-form-field>
+
+      <p class="text-description text-description-color">
+        {{ textES.DESCRIPTION }}
+      </p>
+      <mat-form-field class="input-search">
+        <textarea matInput [formControl]="description" type="text"></textarea>
+        <mat-error *ngIf="!description.valid && description.value !== ''">{{ textError.INPUT_INVALID_FORMAT }}
+        </mat-error>
+      </mat-form-field>
+      <div class="three-columns">
+        <div>
+          <p class="text-description text-description-color">
+            {{ textES.TYPE }}
+          </p>
+          <mat-form-field class="input-search">
+            <mat-select [formControl]="typeSelect" name="currency">
+              <mat-option *ngFor="let currency of listCurrency" [value]="currency" (blur)="checkType()">{{ currency }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div *ngIf="hideDatePicker">
+          <p class="text-description text-description-color">
+            {{ textES.DATE_NOT }}
+          </p>
+          <mat-form-field class="input-search">
+            <input matInput [min]="minDate" [formControl]="dateImplementation" [matDatepicker]="picker" disabled
+              (dateInput)="getNotificationDate($event)" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker disabled="false"></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <p class="text-description text-description-color">
+            {{ textES.TIME_NOT }}
+          </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="hourImplementation" type="time" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Add new clients button -->
+  <div class="add-dialog-button-container">
+    <button [disabled]="!addForm.valid" (click)="sendData()" mat-raised-button>{{ textButtons.ADD }}</button>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+@import "../../../../../../theme.scss";
+
+.header-proyectos-container {
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  margin-bottom: 30px;
+}
+
+.button-action {
+  color: $color-accent;
+}
+
+// Inputs
+.input-search {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: $color-background-secondary;
+  font-family: "SFUIDisplayRegular", sans-serif;
+  box-sizing: border-box;
+  height: 40px;
+  width: 215px;
+  border: 1px solid $color-radius;
+  border-radius: 4px;
+}
+
+input::placeholder,
+input {
+  border: none;
+  outline: none;
+  color: $color-inactive;
+}
+
+// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+//   padding-bottom: 0;
+//   margin: 0 !important;
+// }
+
+// button colors
+// Segmento de código para forzar la aplicación de un estilo
+// ::ng-deep .mat-raised-button {
+//   background: $color-gradient-button !important;
+// }
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.mat-button {
+  font-family: "SFUIDisplayRegular", sans-serif;
+  font-weight: bold;
+}
+
+.mat-icon {
+  color: $color-accent;
+  margin: 9px 10px;
+}
+
+// Status colors
+.status-active {
+  color: $color-status-active;
+}
+
+.status-inactive {
+  color: $color-status-inactive;
+}

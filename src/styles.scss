@@ -1,0 +1,442 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./theme.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "SFUIDisplayRegular", sans-serif;
+  background-color: $color-background-principal;
+}
+
+// Text styles
+h1 {
+  font-size: 35px;
+  letter-spacing: 0;
+  line-height: 41px;
+  color: $color-text-title;
+  margin: 0;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 17px;
+  text-align: center;
+  color: $color-text-title;
+}
+
+.text-title-dialog {
+  color: $color-text-title;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 29px;
+  text-align: center;
+}
+
+.text-description {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.upload-text {
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 8px;
+  text-align: center;
+  color: $color-text-description;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+// Colors
+.text-title-color {
+  color: $color-text-title;
+}
+
+.text-description-color {
+  color: $color-text-description;
+}
+
+.mat-header-cell {
+  color: $color-text-description;
+}
+
+.mat-cell {
+  color: $color-text-title;
+}
+
+td.mat-cell {
+  border-bottom-color: $color-inactive;
+}
+
+.text-accent {
+  color: $color-accent;
+}
+
+.txt-list {
+  color: $color-text-title;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+
+.text-title-table {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 22px;
+  color: $color-text-title;
+}
+
+// Select
+.mat-select-value,
+.mat-option,
+.mat-option.mat-active {
+  font-family: SFUIDisplayRegular;
+  color: $color-text-title;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-accent;
+}
+
+.mat-select-panel {
+  background: $color-background-secondary;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: rgba($color: $color-background-principal, $alpha: 1);
+}
+
+.mat-select-arrow,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $color-accent;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: transparent;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0 10px;
+}
+
+.mat-form-field-infix {
+  border-top: 0;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding: 0;
+}
+
+// Inputs
+.input-search {
+  display: flex !important;
+  align-items: center;
+  background-color: $color-background-secondary;
+  font-family: "SFUIDisplayRegular", sans-serif;
+  box-sizing: border-box;
+  height: 40px;
+  width: 215px;
+  border: 1px solid $color-radius;
+  border-radius: 4px;
+}
+
+input::placeholder,
+input,
+.mat-input-element {
+  border: none;
+  outline: none;
+  color: $color-inactive !important;
+  margin: auto 10px !important;
+}
+
+input {
+  width: 100%;
+}
+
+.mat-error {
+  margin-top: 30px;
+}
+
+.general-input-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.inputs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-draganddrop-zone {
+  border: 2.13px dashed $color-background-border-accent;
+  height: 100%;
+  display: grid;
+  align-content: center;
+}
+
+.add-dialog-button-container {
+  margin: 20px;
+  display: grid;
+  justify-items: center;
+}
+
+// Background styles
+.principal-background {
+  background-color: $color-background-principal;
+  height: 100vh;
+}
+
+.secondary-background {
+  background-color: $color-background-secondary;
+}
+
+.mat-table {
+  background-color: $color-background-secondary;
+  width: 100%;
+  font-family: SFUIDisplayRegular;
+}
+
+.mat-dialog-container {
+  background: $color-background-secondary;
+  position: relative;
+}
+
+// Tables
+table {
+  padding-left: 20px;
+  margin: 10px 0px;
+  width: 100%;
+  background-color: $color-background-secondary;
+  border-spacing: 0;
+}
+
+.table-container {
+  background-color: $color-background-secondary;
+  max-height: 674px;
+  overflow: auto;
+}
+
+th {
+  color: $color-text-description;
+  font-family: SFUIDisplayRegular, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 24px;
+}
+
+td {
+  color: $color-text-title;
+  font-size: 14px;
+  border-bottom: 1px solid $color-inactive;
+}
+
+td.mat-cell,
+td {
+  padding: 20px 0px !important;
+}
+
+.mat-paginator {
+  background: $color-background-secondary;
+  color: $color-text-title;
+}
+
+.mat-icon-button[disabled][disabled] {
+  color: $color-inactive;
+}
+
+.mat-icon-button {
+  color: $color-accent;
+}
+
+.general-input-container {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.inputs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+/* Autocomplete */
+.mat-autocomplete-panel {
+  background-color: $color-background-secondary;
+}
+
+/* Containers */
+.add-dialog-button-container {
+  margin: 20px;
+  display: grid;
+  justify-items: center;
+}
+
+.added-items-container {
+  background-color: $color-background-principal;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dropzone-container {
+  background-color: rgba($color: $color-background-accent, $alpha: 0.05);
+  padding: 10px;
+}
+
+.img-sm-container {
+  width: 100px;
+  height: 100px;
+}
+
+.img-l-container {
+  width: 525px;
+  height: 160px;
+}
+
+// Buttons
+.close-modal-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.mat-button[disabled][disabled] {
+  color: $color-inactive;
+}
+
+// Tabs
+.mat-tab-label {
+  color: $color-inactive;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-align: center;
+  font-family: "SFUIDisplayRegular", sans-serif;
+  height: 32px !important;
+}
+
+.mat-tab-label-active {
+  color: $color-text-white;
+  background-color: $tabs-background;
+  border-radius: 5px;
+}
+
+// menu
+.mat-menu-panel {
+  background: $color-background-secondary;
+}
+
+// Dimens
+.m-tb-20 {
+  margin: 20px 0px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.p-tb-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.zero-margin {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+// Spinner / Loader / Progress
+.spinner-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color: $color-inactive, $alpha: 0.2);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Datepicker
+.mat-calendar {
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.mat-datepicker-content {
+  background-color: $color-background-secondary;
+  color: $color-text-title;
+}
+
+.mat-calendar-body-label {
+  color: $color-text-title;
+}
+
+.mat-calendar-body-cell-content {
+  color: $color-text-description;
+}
+
+.mat-datepicker-content .mat-calendar-next-button,
+.mat-datepicker-content .mat-calendar-previous-button {
+  color: $color-accent;
+}
+
+.mat-calendar-body-selected {
+  background-color: $color-accent;
+  color: $color-text-white;
+}
+
+// Fonts
+@font-face {
+  font-family: SFUIDisplayRegular;
+  src: url(./assets/fonts/SF-UI-Display-Regular.ttf) format("truetype");
+}
+
+@media only screen and (min-width: 360px), (max-width: 600px) {
+  h1 {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 601px), (max-width: 1023px) {
+  h1 {
+    font-size: 20px;
+  }
+}

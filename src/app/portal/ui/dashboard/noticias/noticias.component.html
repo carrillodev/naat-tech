@@ -1,0 +1,12 @@
+<app-general-header [dataInput]="dataToSend"></app-general-header>
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="{{textES.TABS.ACTIVE}}">
+    <app-activas></app-activas>
+  </mat-tab>
+  <mat-tab label="{{textES.TABS.DRAFTS}}">
+    <app-borradores></app-borradores>
+  </mat-tab>
+  <mat-tab label="{{textES.TABS.SUSPENDED}}">
+    <app-suspendidas></app-suspendidas>
+  </mat-tab>
+</mat-tab-group>

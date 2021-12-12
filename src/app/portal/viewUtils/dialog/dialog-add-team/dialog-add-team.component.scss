@@ -1,0 +1,24 @@
+@import "../../../../../theme.scss";
+
+h2 {
+  color: $color-text-title;
+}
+
+// Inputs
+.input-search {
+  width: 100%;
+}
+
+.txt-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $color-inactive;
+}
+
+// Buttons
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}

@@ -1,0 +1,12 @@
+@import "../../../../../theme.scss";
+
+// Buttons
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.input-search {
+  width: 100%;
+}

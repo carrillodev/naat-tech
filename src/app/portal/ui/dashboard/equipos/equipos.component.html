@@ -1,0 +1,5 @@
+<div *ngIf="activeSpinner" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+<app-general-header [dataInput]="dataToSend"></app-general-header>
+<app-general-table [dataReceived]="tableDataToSend" (changePage)="changePageTable($event)"></app-general-table>

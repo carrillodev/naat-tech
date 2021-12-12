@@ -1,0 +1,35 @@
+<app-general-header [dataInput]="dataToSend"></app-general-header>
+<p class="text-title-table">{{ textEs.TITLE_TABLE_ONE }}</p>
+<app-general-table [dataReceived]="tableDataToSend" (changePage)="changePageTable($event)"></app-general-table>
+<!-- <p class="text-title-table">{{ textEs.TITLE_TABLE_TWO }}</p> -->
+<!-- <app-simple-table [dataReceived]="tableSentData" (changePage)="changePageTableSent($event)"></app-simple-table> -->
+
+<div>
+  <table>
+    <caption class="text-title-table m-tb-20">{{ textEs.TITLE_TABLE_TWO }}</caption>
+    <thead>
+      <tr>
+        <th scope="tableHead" class="p-tb-20" *ngFor="let title of textEs.TABLE_HEADERS_TWO">{{ title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of dataSentTableList">
+        <td>
+          <p>{{ notification.COLUMN_ONE }}</p>
+        </td>
+        <td>
+          <p>{{ notification.COLUMN_TWO }}</p>
+        </td>
+        <td>
+          <p>{{ notification.COLUMN_THREE }}</p>
+        </td>
+        <td>
+          <p>{{ notification.COLUMN_FOUR }}</p>
+        </td>
+        <td>
+          <p>{{ notification.COLUMN_FIVE }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

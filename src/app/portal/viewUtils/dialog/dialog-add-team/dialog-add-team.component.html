@@ -1,0 +1,102 @@
+<div>
+  <span class="close-modal-button">
+    <mat-icon mat-dialog-close class="text-accent">close</mat-icon>
+  </span>
+
+  <p class="text-title-dialog">
+    {{ textES.TITLE }}
+  </p>
+
+  <!-- Inputs -->
+  <div class="general-input-container">
+    <form [formGroup]="addForm">
+      <div class="inputs-container">
+        <div>
+          <p class="text-description text-description-color"> {{ textES.AREA }} </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="area" type="text">
+            <mat-error *ngIf="!area.valid && area.value !== '' ">
+              {{ txtError.INPUT_INVALID_FORMAT }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <p class="text-description text-description-color"> {{ textES.EMAIL_LEAD }} </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="emailLead" type="text">
+            <mat-error *ngIf="!emailLead.valid && emailLead.value !== '' ">
+              {{ txtError.INPUT_INVALID_FORMAT }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+    <h2 class="txt-color-title"> {{ textES.SECOND_TITLE }} </h2>
+    <form [formGroup]="addForm">
+      <div class="inputs-container">
+        <div>
+          <p class="text-description text-description-color"> {{ textES.ADD_COLLABORATORS }} </p>
+          <mat-form-field class="input-search">
+            <input matInput type="email" required [formControl]="collaboratorsAutoComplete" [matAutocomplete]="auto">
+            <button matSuffix mat-icon-button (click)="addCollaborator()"
+              [disabled]="!collaboratorsAutoComplete.valid || addedCollaborator.length >= 4">
+              <mat-icon> add_circle_outline </mat-icon>
+            </button>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredList | async" [value]="option">
+                {{ option }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <p class="text-description text-description-color"> {{ textES.ADD_ACTIVITIES }} </p>
+          <mat-form-field class="input-search">
+            <input matInput [formControl]="activities" type="text">
+            <button [disabled]="!activities.valid || addedActivities.length >= 4" matSuffix mat-icon-button
+              (click)="addActivity()">
+              <mat-icon> add_circle_outline </mat-icon>
+            </button>
+            <mat-error *ngIf="!activities.valid && activities.value !== '' ">
+              {{ txtError.INPUT_INVALID_FORMAT }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+
+    <div class="inputs-container">
+      <!-- Added Collaboratos -->
+      <div class="added-items-container">
+        <p class="txt-list" *ngFor="let item of addedCollaborator; let pos = index">
+          {{ item }}
+          <button matSuffix mat-icon-button (click)="removeCollaborator(pos)">
+            <mat-icon> close </mat-icon>
+          </button>
+        </p>
+      </div>
+
+      <!-- Added Activities -->
+      <div class="added-items-container">
+        <p class="txt-list" *ngFor="let item of addedActivities; let pos = index">
+          {{ item }}
+          <button matSuffix mat-icon-button (click)="removeActivity(pos)">
+            <mat-icon> close </mat-icon>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add new item button -->
+  <div class="add-dialog-button-container">
+    <button (click)="addValues()"
+      [disabled]="!addForm.valid || addedCollaborator.length === 0 || addedActivities.length === 0" mat-raised-button>
+      {{ textButtons.ADD }}
+    </button>
+  </div>
+
+</div>

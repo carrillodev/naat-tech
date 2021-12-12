@@ -1,0 +1,76 @@
+@import "../../../../../theme.scss";
+
+// Containers
+.two-columns-news-title {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.principal-background-general {
+  padding: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+// Inputs
+.input-search {
+  width: 100%;
+}
+
+.input-textarea {
+  min-height: 190px;
+}
+
+textarea {
+  min-height: 170px;
+  resize: none;
+}
+
+// Buttons
+.mat-stroked-button {
+  border: 1px solid $color-accent;
+  color: $color-accent;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.mat-raised-button {
+  background: $color-gradient-button;
+  width: 200px;
+  font-family: "SFUIDisplayRegular", sans-serif;
+}
+
+.mat-raised-button[disabled][disabled] {
+  color: $color-text-white;
+  background: $color-background-button-inactive;
+}
+
+@media screen and (min-width: 1023px), (max-width: 1364px) {
+  .text-title-dialog {
+    font-size: 20px;
+  }
+
+  .principal-background-general {
+    padding: 15px;
+  }
+
+  .input-textarea {
+    min-height: 170px;
+  }
+
+  textarea {
+    min-height: 140px;
+  }
+
+  // Buttons
+  .mat-stroked-button {
+    width: 180px;
+  }
+
+  .mat-raised-button {
+    width: 180px;
+  }
+}
